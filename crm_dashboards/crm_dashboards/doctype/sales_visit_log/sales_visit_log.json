@@ -1,0 +1,192 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-13 19:25:37.241289",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "visit_details",
+  "date_of_visit",
+  "sales_person",
+  "customer",
+  "column_break_1",
+  "location",
+  "customer_segment",
+  "customer_type",
+  "meeting_details",
+  "objective_of_meeting",
+  "outcome_of_meeting",
+  "column_break_2",
+  "estimated_order_value",
+  "order_lost_value",
+  "reason_for_lost",
+  "next_action_plan",
+  "support_required",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "visit_details",
+   "fieldtype": "Section Break",
+   "label": "Visit Details",
+   "options": "fa fa-calendar"
+  },
+  {
+   "fieldname": "date_of_visit",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date of Visit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sales Person",
+   "options": "Sales Person",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_segment",
+   "fieldtype": "Link",
+   "label": "Customer Segment",
+   "options": "Market Segment"
+  },
+  {
+   "fieldname": "customer_type",
+   "fieldtype": "Select",
+   "label": "Customer Type",
+   "options": "Company\nIndividual\nPartnership"
+  },
+  {
+   "fieldname": "meeting_details",
+   "fieldtype": "Section Break",
+   "label": "Meeting Details",
+   "options": "fa fa-handshake-o"
+  },
+  {
+   "fieldname": "objective_of_meeting",
+   "fieldtype": "Text",
+   "label": "Objective of Meeting",
+   "reqd": 1
+  },
+  {
+   "fieldname": "outcome_of_meeting",
+   "fieldtype": "Select",
+   "label": "Outcome of Meeting",
+   "options": "Successful\nPartially Successful\nUnsuccessful\nFollow-up Required",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "estimated_order_value",
+   "fieldtype": "Currency",
+   "label": "Estimated Order Value"
+  },
+  {
+   "fieldname": "order_lost_value",
+   "fieldtype": "Currency",
+   "label": "Order Lost Value"
+  },
+  {
+   "fieldname": "reason_for_lost",
+   "fieldtype": "Small Text",
+   "label": "Reason for Lost",
+   "depends_on": "eval:doc.outcome_of_meeting == 'Unsuccessful'"
+  },
+  {
+   "fieldname": "next_action_plan",
+   "fieldtype": "Text",
+   "label": "Next Action Plan"
+  },
+  {
+   "fieldname": "support_required",
+   "fieldtype": "Small Text",
+   "label": "Support Required"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Sales Visit Log",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-09-13 19:25:37.241289",
+ "modified_by": "Administrator",
+ "module": "Crm Dashboards",
+ "name": "Sales Visit Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

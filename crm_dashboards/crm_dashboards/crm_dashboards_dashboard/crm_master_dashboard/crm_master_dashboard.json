@@ -1,0 +1,66 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Projects by Stage Funnel",
+   "width": "Half"
+  },
+  {
+   "chart": "Project Order Value by Stage",
+   "width": "Half"
+  },
+  {
+   "chart": "Visit Timeline Chart",
+   "width": "Half"
+  },
+  {
+   "chart": "Sales Projection 2025 by Sales Person",
+   "width": "Half"
+  },
+  {
+   "chart": "Customers by Type",
+   "width": "Half"
+  },
+  {
+   "chart": "Sales 2024 vs Projection 2025",
+   "width": "Half"
+  },
+  {
+   "chart": "Deal Based Forecast Chart",
+   "width": "Half"
+  },
+  {
+   "chart": "Daily Sales Weekly Trend",
+   "width": "Half"
+  },
+  {
+   "chart": "Deal Loss Analysis Chart",
+   "width": "Half"
+  },
+  {
+   "chart": "Sales Budget vs Actual",
+   "width": "Half"
+  },
+  {
+   "chart": "Monthly Sales Salesperson Wise",
+   "width": "Half"
+  },
+  {
+   "chart": "Opportunity Based Forecast Chart",
+   "width": "Half"
+  }
+ ],
+ "creation": "2025-09-13 20:42:41.172751",
+ "dashboard_name": "CRM Master Dashboard",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+
+ "is_standard": 1,
+ "modified": "2025-09-14 20:42:48.102578",
+ "modified_by": "Administrator",
+ "module": "Crm Dashboards",
+ "name": "CRM Master Dashboard",
+ "owner": "Administrator"
+}

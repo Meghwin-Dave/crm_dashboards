@@ -1,0 +1,9 @@
+# CRM Dashboards Requirements
+# This app requires Frappe Framework and ERPNext
+
+frappe>=15.78.1
+erpnext>=15.76.0
+
+# Additional dependencies for enhanced functionality
+pandas>=1.5.0
+numpy>=1.21.0
