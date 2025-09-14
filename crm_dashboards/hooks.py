@@ -255,5 +255,11 @@ fixtures = [
         "filters": [
             ["module", "in", ["Crm Dashboards"]]
         ]
+    },
+    {
+        "doctype": "Dashboard Chart",
+        "filters": [
+            ["module", "in", ["Crm Dashboards"]]
+        ]
     }
 ]
