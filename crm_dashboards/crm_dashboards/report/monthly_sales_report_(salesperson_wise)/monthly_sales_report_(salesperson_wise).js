@@ -2,6 +2,7 @@
 // For license information, please see license.txt
 
 frappe.query_reports["Monthly Sales Report (Salesperson-wise)"] = {
+	"chart": true,
 	"filters": [
 		{
 			"fieldname": "month",

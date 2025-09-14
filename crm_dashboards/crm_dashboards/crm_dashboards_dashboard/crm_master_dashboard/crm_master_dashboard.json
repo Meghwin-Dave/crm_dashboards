@@ -1,36 +1,47 @@
 {
- "cards": [],
+ "cards": [
+  {
+   "card": "Opportunity Conversion Probablity"
+  },
+  {
+   "card": "Customers"
+  },
+  {
+   "card": "Ongoing Projects"
+  },
+  {
+   "card": "Project Order Value"
+  },
+  {
+   "card": "Target Sales"
+  },
+  {
+   "card": "Actual Sales"
+  },
+  {
+   "card": "Shortfall or Excess Sales"
+  }
+ ],
+ "chart_options": "",
  "charts": [
   {
-   "chart": "Projects by Stage Funnel",
-   "width": "Half"
+   "chart": "Project Tracker Chart",
+   "width": "Full"
   },
   {
-   "chart": "Project Order Value by Stage",
-   "width": "Half"
-  },
-  {
-   "chart": "Visit Timeline Chart",
-   "width": "Half"
-  },
-  {
-   "chart": "Sales Projection 2025 by Sales Person",
-   "width": "Half"
-  },
-  {
-   "chart": "Customers by Type",
-   "width": "Half"
-  },
-  {
-   "chart": "Sales 2024 vs Projection 2025",
-   "width": "Half"
+   "chart": "Sales Budget Chart",
+   "width": "Full"
   },
   {
    "chart": "Deal Based Forecast Chart",
    "width": "Half"
   },
   {
-   "chart": "Daily Sales Weekly Trend",
+   "chart": "Opportunity Based Forecast Chart",
+   "width": "Half"
+  },
+  {
+   "chart": "Daily Sales Report Chart",
    "width": "Half"
   },
   {
@@ -38,16 +49,8 @@
    "width": "Half"
   },
   {
-   "chart": "Sales Budget vs Actual",
-   "width": "Half"
-  },
-  {
-   "chart": "Monthly Sales Salesperson Wise",
-   "width": "Half"
-  },
-  {
-   "chart": "Opportunity Based Forecast Chart",
-   "width": "Half"
+   "chart": "Monthly Sales Report Chart",
+   "width": "Full"
   }
  ],
  "creation": "2025-09-13 20:42:41.172751",
@@ -56,9 +59,8 @@
  "doctype": "Dashboard",
  "idx": 0,
  "is_default": 0,
-
  "is_standard": 1,
- "modified": "2025-09-14 20:42:48.102578",
+ "modified": "2025-09-14 20:57:41.690014",
  "modified_by": "Administrator",
  "module": "Crm Dashboards",
  "name": "CRM Master Dashboard",

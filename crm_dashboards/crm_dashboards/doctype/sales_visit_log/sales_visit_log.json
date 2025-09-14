@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:SVL-{#####}",
  "creation": "2025-09-13 19:25:37.241289",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -110,10 +111,10 @@
    "label": "Order Lost Value"
   },
   {
+   "depends_on": "eval:doc.outcome_of_meeting == 'Unsuccessful'",
    "fieldname": "reason_for_lost",
    "fieldtype": "Small Text",
-   "label": "Reason for Lost",
-   "depends_on": "eval:doc.outcome_of_meeting == 'Unsuccessful'"
+   "label": "Reason for Lost"
   },
   {
    "fieldname": "next_action_plan",
@@ -140,10 +141,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-13 19:25:37.241289",
+ "modified": "2025-09-14 20:40:13.638668",
  "modified_by": "Administrator",
  "module": "Crm Dashboards",
  "name": "Sales Visit Log",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

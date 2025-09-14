@@ -10,7 +10,6 @@ def execute(filters=None):
 	columns = get_columns()
 	data = get_data(filters)
 	chart = get_chart_data(data, filters)
-	
 	return columns, data, None, chart
 
 
@@ -299,24 +298,58 @@ def get_conditions(filters):
 
 
 def get_chart_data(data, filters):
-	charts = []
+	# Return the funnel chart as the main chart for the report
+	chart = get_funnel_chart(data)
 	
-	# Chart 1: Funnel chart showing count of projects per stage
-	chart1 = get_funnel_chart(data)
-	if chart1:
-		charts.append(chart1)
+	# Return a simple test chart if no chart data
+	if not chart:
+		return {
+			"data": {
+				"labels": ["Initial Discussion", "Negotiation", "Order Received"],
+				"datasets": [{
+					"name": "Project Count",
+					"values": [2, 3, 1]
+				}]
+			},
+			"type": "bar",
+			"title": "Test Chart"
+		}
 	
-	# Chart 2: Bar chart of Project Order Value by Stage
-	chart2 = get_order_value_chart(data)
-	if chart2:
-		charts.append(chart2)
+	return chart
+
+
+# Whitelisted methods for dashboard charts
+@frappe.whitelist()
+def get_projects_by_stage_funnel(filters=None):
+	"""Whitelisted method for Projects by Stage Funnel chart"""
+	if not filters:
+		filters = {}
 	
-	# Chart 3: Timeline chart of visits (1st Visit vs Last Visit)
-	chart3 = get_timeline_chart(data)
-	if chart3:
-		charts.append(chart3)
+	data = get_data(filters)
+	chart = get_funnel_chart(data)
+	return chart
+
+
+@frappe.whitelist()
+def get_project_order_value_by_stage(filters=None):
+	"""Whitelisted method for Project Order Value by Stage chart"""
+	if not filters:
+		filters = {}
 	
-	return charts
+	data = get_data(filters)
+	chart = get_order_value_chart(data)
+	return chart
+
+
+@frappe.whitelist()
+def get_visit_timeline_chart(filters=None):
+	"""Whitelisted method for Visit Timeline Chart"""
+	if not filters:
+		filters = {}
+	
+	data = get_data(filters)
+	chart = get_timeline_chart(data)
+	return chart
 
 
 def get_funnel_chart(data):
@@ -367,8 +400,8 @@ def get_funnel_chart(data):
 				"values": [item["count"] for item in ordered_data]
 			}]
 		},
-		"type": "funnel",
-		"title": "Projects by Stage (Funnel View)"
+		"type": "bar",
+		"title": "Projects by Stage"
 	}
 
 

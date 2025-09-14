@@ -2,6 +2,7 @@
 // For license information, please see license.txt
 
 frappe.query_reports["Project Tracker"] = {
+	"chart": true,
 	"filters": [
 		// Sales Person filter disabled until custom fields are installed
 		// {

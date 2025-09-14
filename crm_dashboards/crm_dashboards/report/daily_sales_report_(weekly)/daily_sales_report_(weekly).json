@@ -28,5 +28,6 @@
    "role": "Sales Manager"
   }
  ],
- "timeout": 0
+ "timeout": 0,
+ "show_chart": 1
 }

@@ -2,6 +2,7 @@
 // For license information, please see license.txt
 
 frappe.query_reports["Daily Sales Report (Weekly)"] = {
+	"chart": true,
 	"filters": [
 		{
 			"fieldname": "from_date",

@@ -249,5 +249,11 @@ fixtures = [
         "filters": [
             ["module", "in", ["Crm Dashboards"]]
         ]
+    },
+    {
+        "doctype": "Number Card",
+        "filters": [
+            ["module", "in", ["Crm Dashboards"]]
+        ]
     }
 ]

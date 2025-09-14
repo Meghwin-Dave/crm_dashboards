@@ -95,10 +95,10 @@ def get_conditions(filters):
 	conditions = []
 	
 	if filters.get("from_date"):
-		conditions.append("opp.modified >= %(from_date)s")
+		conditions.append("DATE(opp.modified) >= %(from_date)s")
 	
 	if filters.get("to_date"):
-		conditions.append("opp.modified <= %(to_date)s")
+		conditions.append("DATE(opp.modified) <= %(to_date)s")
 	
 	if filters.get("sales_person"):
 		conditions.append("opp.opportunity_owner = %(sales_person)s")
@@ -112,8 +112,14 @@ def get_conditions(filters):
 		return ""
 
 
-def get_chart_data(data):
+def get_chart_data(data=None, filters=None):
 	"""Prepare chart data for Count of Lost Deals by Reason"""
+	
+	# If called from dashboard without parameters, get data ourselves
+	if data is None:
+		if filters is None:
+			filters = {}
+		data = get_data(filters)
 	
 	# Count lost deals by reason
 	reason_counts = {}
@@ -146,3 +152,15 @@ def get_chart_data(data):
 	}
 	
 	return chart_data
+
+
+# Whitelisted method for dashboard chart
+@frappe.whitelist()
+def get_deal_loss_analysis_chart(filters=None):
+	"""Whitelisted method for Deal Loss Analysis chart"""
+	if not filters:
+		filters = {}
+	
+	data = get_data(filters)
+	chart = get_chart_data(data)
+	return chart

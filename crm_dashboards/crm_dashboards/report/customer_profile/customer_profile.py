@@ -20,7 +20,8 @@ def get_columns():
 			"fieldname": "sno",
 			"label": _("SNO"),
 			"fieldtype": "Int",
-			"width": 50
+			"width": 50,
+			"hidden": 1
 		},
 		{
 			"fieldname": "sales_person",
@@ -167,7 +168,7 @@ def get_data(filters):
 		ORDER BY c.customer_name
 	"""
 	
-	data = frappe.db.sql(query, as_dict=True)
+	data = frappe.db.sql(query, filters, as_dict=True)
 	
 	# Add serial numbers and format data
 	for i, row in enumerate(data, 1):
@@ -206,7 +207,13 @@ def get_conditions(filters):
 	return ""
 
 
-def get_chart_data(data, filters):
+def get_chart_data(data=None, filters=None):
+	# If called from dashboard without parameters, get data ourselves
+	if data is None:
+		if filters is None:
+			filters = {}
+		data = get_data(filters)
+	
 	charts = []
 	
 	# Chart 1: Bar chart of Sales Projection 2025 grouped by Sales Person
@@ -322,3 +329,37 @@ def get_sales_comparison_chart(data):
 		"type": "line",
 		"title": "Sales 2024 vs Projection 2025 (Top 10 Customers)"
 	}
+
+
+# Whitelisted methods for dashboard charts
+@frappe.whitelist()
+def get_sales_projection_2025_by_sales_person(filters=None):
+	"""Whitelisted method for Sales Projection 2025 by Sales Person chart"""
+	if not filters:
+		filters = {}
+	
+	data = get_data(filters)
+	chart = get_sales_projection_chart(data)
+	return chart
+
+
+@frappe.whitelist()
+def get_customers_by_type(filters=None):
+	"""Whitelisted method for Customers by Type chart"""
+	if not filters:
+		filters = {}
+	
+	data = get_data(filters)
+	chart = get_customer_type_chart(data)
+	return chart
+
+
+@frappe.whitelist()
+def get_sales_2024_vs_projection_2025(filters=None):
+	"""Whitelisted method for Sales 2024 vs Projection 2025 chart"""
+	if not filters:
+		filters = {}
+	
+	data = get_data(filters)
+	chart = get_sales_comparison_chart(data)
+	return chart

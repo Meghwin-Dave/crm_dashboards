@@ -1,0 +1,101 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"jS2i1Gj5DZ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">CRM Management Portal</span>\",\"col\":12}},{\"id\":\"t9TUEY3JMx\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"1J_UXjqDSY\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Opportunity Based Forecast\",\"col\":3}},{\"id\":\"dXnJrVY8b0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer Profile\",\"col\":3}},{\"id\":\"Leg-ICJFZ8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Deal Based Forecast\",\"col\":3}},{\"id\":\"YTBzhGblPj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Sales Report (Weekly)\",\"col\":3}},{\"id\":\"layGdhB-gi\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Deal Loss\",\"col\":3}},{\"id\":\"2H2_g2fV-B\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Tracker\",\"col\":3}},{\"id\":\"CodFI6GduZ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Budget\",\"col\":3}},{\"id\":\"20I0bC-K0o\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Monthly Sales Report (Salesperson-wise)\",\"col\":3}},{\"id\":\"eO5QyBtLWz\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Dashboard</b></span>\",\"col\":12}},{\"id\":\"iJWPotbbG2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"CRM Master Dashboard\",\"col\":3}}]",
+ "creation": "2025-09-13 22:35:19.283249",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "retail",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "CRM Management Portal",
+ "links": [],
+ "modified": "2025-09-13 22:39:31.993894",
+ "modified_by": "Administrator",
+ "module": "Crm Dashboards",
+ "name": "CRM Management Portal",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 24.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Opportunity Based Forecast",
+   "link_to": "Opportunity Based Forecast",
+   "report_ref_doctype": "Opportunity",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "CRM Master Dashboard",
+   "link_to": "CRM Master Dashboard",
+   "type": "Dashboard"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Customer Profile",
+   "link_to": "Customer Profile",
+   "report_ref_doctype": "Customer",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Deal Based Forecast",
+   "link_to": "Deal Based Forecast",
+   "report_ref_doctype": "Opportunity",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Daily Sales Report (Weekly)",
+   "link_to": "Daily Sales Report (Weekly)",
+   "report_ref_doctype": "Sales Visit Log",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Deal Loss",
+   "link_to": "Deal Loss",
+   "report_ref_doctype": "Opportunity",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Project Tracker",
+   "link_to": "Project Tracker",
+   "report_ref_doctype": "Project",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Sales Budget",
+   "link_to": "Sales Budget",
+   "report_ref_doctype": "Sales Invoice",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Monthly Sales Report (Salesperson-wise)",
+   "link_to": "Monthly Sales Report (Salesperson-wise)",
+   "report_ref_doctype": "Sales Invoice",
+   "type": "Report"
+  }
+ ],
+ "title": "CRM Management Portal"
+}

@@ -2,6 +2,7 @@
 // For license information, please see license.txt
 
 frappe.query_reports["Customer Profile"] = {
+	"chart": true,
 	"filters": [
 		{
 			"fieldname": "sales_person",

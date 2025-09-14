@@ -133,8 +133,14 @@ def get_conditions(filters):
 		return ""
 
 
-def get_chart_data(data):
+def get_chart_data(data=None, filters=None):
 	"""Prepare chart data for Estimated Order Value grouped by Date"""
+	
+	# If called from dashboard without parameters, get data ourselves
+	if data is None:
+		if filters is None:
+			filters = {}
+		data = get_data(filters)
 	
 	# Group data by date
 	date_data = {}
@@ -174,3 +180,15 @@ def get_chart_data(data):
 	}
 	
 	return chart_data
+
+
+# Whitelisted method for dashboard chart
+@frappe.whitelist()
+def get_daily_sales_weekly_trend(filters=None):
+	"""Whitelisted method for Daily Sales Weekly Trend chart"""
+	if not filters:
+		filters = {}
+	
+	data = get_data(filters)
+	chart = get_chart_data(data)
+	return chart

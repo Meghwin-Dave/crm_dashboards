@@ -180,8 +180,14 @@ def get_actual_sales(sales_person, from_date, to_date, filters):
 	return flt(result[0].total_sales) if result else 0
 
 
-def get_chart_data(data):
+def get_chart_data(data=None, filters=None):
 	"""Prepare chart data for Actual Sales vs Target Value"""
+	
+	# If called from dashboard without parameters, get data ourselves
+	if data is None:
+		if filters is None:
+			filters = {}
+		data = get_data(filters)
 	
 	sales_persons = []
 	actual_sales = []
@@ -211,3 +217,15 @@ def get_chart_data(data):
 	}
 	
 	return chart_data
+
+
+# Whitelisted method for dashboard chart
+@frappe.whitelist()
+def get_monthly_sales_chart(filters=None):
+	"""Whitelisted method for Monthly Sales Salesperson Wise chart"""
+	if not filters:
+		filters = {}
+	
+	data = get_data(filters)
+	chart = get_chart_data(data)
+	return chart

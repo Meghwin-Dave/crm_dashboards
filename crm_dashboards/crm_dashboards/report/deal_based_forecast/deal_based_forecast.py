@@ -130,8 +130,14 @@ def get_conditions(filters):
 		return ""
 
 
-def get_chart_data(data):
+def get_chart_data(data=None, filters=None):
 	"""Prepare chart data for Weighted Amount grouped by Sales Person"""
+	
+	# If called from dashboard without parameters, get data ourselves
+	if data is None:
+		if filters is None:
+			filters = {}
+		data = get_data(filters)
 	
 	# Group data by sales person
 	sales_person_data = {}
@@ -174,3 +180,15 @@ def get_chart_data(data):
 	}
 	
 	return chart_data
+
+
+# Whitelisted method for dashboard chart
+@frappe.whitelist()
+def get_deal_based_forecast_chart(filters=None):
+	"""Whitelisted method for Deal Based Forecast chart"""
+	if not filters:
+		filters = {}
+	
+	data = get_data(filters)
+	chart = get_chart_data(data)
+	return chart
